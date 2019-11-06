@@ -5,9 +5,9 @@ def winorlose(status):
 	print("called win or lose")
 	print("************************")
 
-	print("You", status, "! Would you like to play again?")
+	print("You", status + "! Would you like to play again?")
 
-	choice = input("Y / N")
+	choice = input("Y / N: ")
 	print(choice)
 
 	if (choice is "N") or (choice is "n"):
@@ -16,13 +16,16 @@ def winorlose(status):
 
 	elif (choice is "Y") or (choice is "y"):
 		# reset the game so that we can start all over again
-		global player_lives
-		global computer_lives
-		global player
-		global computer
-		global choices
-
+		# this will break, currently - we will fix this next class
 		player_lives = 1
 		computer_lives = 1
 		player = False
 		computer = choices[randint(0,2)]
+	
+	else:
+		# not a y or n, so make the user pick a valid choice
+		print("make a valid choice, Y or N")
+		# this is recursion - call a function
+		# from inside itself. Basically just re-up the choice
+		# and force the user to pick yes or no (y or n)
+		winorlose(status)
