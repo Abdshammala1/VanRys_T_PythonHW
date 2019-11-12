@@ -16,3 +16,8 @@ Choose your weapon wisely!
 The computer chooses first; just follow the prompts.
 
 Built with Python 3.
+
+
+**********************************************About update data*******************************************
+def Choose_Option():This function is about that the player have choice of "rock", "scissors", "paper"
+def Computer_Option():This function is about that computer have random choice.
